@@ -11,4 +11,6 @@ Will be maintaining this as I have time, thanks for understanding! 🙏🏽
 
 This is my baby 🎉  
   
-![Imgur Image](https://i.imgur.com/O8QguuG.png)
+![Imgur Image](https://i.imgur.com/O8QguuG.png)  
+
+Made with ❤ (and hate hahahah)
