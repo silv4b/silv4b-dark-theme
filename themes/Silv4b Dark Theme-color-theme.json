@@ -736,7 +736,7 @@
 		"name": "Strings",
 		"scope": "string",
 		"settings": {
-		  "foreground": "#74c439"
+		  "foreground": "#8194ff"
 		}
 	  },
 	  {
@@ -1972,7 +1972,7 @@
 	  "diffEditor.insertedTextBackground": "#9bb95533",
 	  "diffEditor.removedTextBackground": "#ff000033",
 	  "diffEditor.border": "#444444",
-	  "panel.background": "#000000ea",
+	  "panel.background": "#101319",
 	  "panel.border": "#ffffff",
 	  "panelTitle.activeBorder": "#ffffff",
 	  "panelTitle.activeForeground": "#ffffff",

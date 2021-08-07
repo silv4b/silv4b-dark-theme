@@ -1,6 +1,7 @@
 # Silv4b's Dark Theme 🌚
 
 ## About
+
 Here is my first VS Code theme, builded by myself. I like dark themes so it's full dark.
 
 I took inspiration from the [Dracula](https://github.com/dracula/dracula-theme) and the [One Dark Pro](https://github.com/Binaryify/OneDark-Pro) themes.
