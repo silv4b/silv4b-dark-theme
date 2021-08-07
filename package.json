@@ -4,6 +4,7 @@
     "description": "Silv4b's Dark Theme!",
     "version": "0.0.1",
     "publisher": "Silv4b",
+    "icon": "profile-square-150px.jpg",
     "repository": {
         "type": "git",
         "url": "https://github.com/silv4b/silv4b-dark-theme"
