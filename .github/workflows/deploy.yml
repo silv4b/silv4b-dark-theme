@@ -17,11 +17,9 @@ jobs:
           node-version: '14'
         name: 📦 Installing vsce package
       - run: npm install -g vsce@1.96.1 --save-dev
-        name: 🔧 Generate vsix package
-      - run: vsce package
         name: ✅ Publishing on marketplace
-      #- run: vsce publish major -p ${{ secrets.AZURE_SECRET }}
-
+      - run: vsce publish minor -p ${{ secrets.AZURE_SECRET }}
+      
   build-minor:
   # Run if there is any substring "minor" in the commit message
     if: ${{ contains(github.event.head_commit.message, 'minor')}}
@@ -33,10 +31,8 @@ jobs:
           node-version: '14'
         name: 📦 Installing vsce package
       - run: npm install -g vsce@1.96.1 --save-dev
-        name: 🔧 Generate vsix package
-      - run: vsce package
         name: ✅ Publishing on marketplace
-      #- run: vsce publish minor -p ${{ secrets.AZURE_SECRET }}
+      - run: vsce publish minor -p ${{ secrets.AZURE_SECRET }}
 
   build-patch:
   # Run if there is any substring "path" in the commit message
@@ -49,7 +45,5 @@ jobs:
           node-version: '14'
         name: 📦 Installing vsce package
       - run: npm install -g vsce@1.96.1 --save-dev
-        name: 🔧 Generate vsix package
-      - run: vsce package
         name: ✅ Publishing on marketplace
-      #- run: vsce publish patch -p ${{ secrets.AZURE_SECRET }}
+      - run: vsce publish minor -p ${{ secrets.AZURE_SECRET }}
