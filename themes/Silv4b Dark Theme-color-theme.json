@@ -1847,7 +1847,7 @@
 	"colors": {
 	  "foreground": "#ffffff",
 	  "focusBorder": "#6082b6",
-	  "selection.background": "#6082b600",
+	  "selection.background": "#0066ff",
 	  "scrollbar.shadow": "#6082b600",
 	  "activityBar.foreground": "#6082b6",
 	  "activityBar.background": "#161a24",
@@ -1980,7 +1980,7 @@
 	  "badge.background": "#ff0000",
 	  "badge.foreground": "#ffffff",
 	  "terminal.foreground": "#ffffff",
-	  "terminal.selectionBackground": "#00000040",
+	  "terminal.selectionBackground": "#0066ff",
 	  "terminalCursor.background": "#6082b6",
 	  "terminalCursor.foreground": "#ffffff",
 	  "terminal.border": "#ff000048",
