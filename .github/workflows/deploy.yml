@@ -7,14 +7,13 @@ on:
   
 jobs:
   build-major:
-    if: ${{ contains(github.event.head_commit.message, 'major')}}
+    #if: ${{ contains(github.event.head_commit.message, 'major')}}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        name: 🐙 Setting up GitHub
       - run: git config --global user.email "brunosilv_a@outlook.com"
       - run: git config --global user.name "Bruno Silva"
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: '14'
         name: 📩 Update npm
@@ -25,14 +24,13 @@ jobs:
       - run: vsce publish major -p ${{ secrets.AZURE_SECRET }}
       
   build-minor:
-    if: ${{ contains(github.event.head_commit.message, 'minor')}}
+    #if: ${{ contains(github.event.head_commit.message, 'minor')}}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        name: 🐙 Setting up GitHub
       - run: git config --global user.email "brunosilv_a@outlook.com"
       - run: git config --global user.name "Bruno Silva"
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: '14'
         name: 📩 Update npm
@@ -43,14 +41,13 @@ jobs:
       - run: vsce publish minor -p ${{ secrets.AZURE_SECRET }}
 
   build-patch:
-    if: ${{ contains(github.event.head_commit.message, 'patch')}}
+    #if: ${{ contains(github.event.head_commit.message, 'patch')}}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        name: 🐙 Setting up GitHub
       - run: git config --global user.email "brunosilv_a@outlook.com"
       - run: git config --global user.name "Bruno Silva"
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: '14'
         name: 📩 Update npm
