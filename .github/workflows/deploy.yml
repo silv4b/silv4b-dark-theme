@@ -7,43 +7,55 @@ on:
   
 jobs:
   build-major:
-    # Run if there is any substring "major" in the commit message
-    if: ${{ contains(github.event.head_commit.message, 'major')}}
+    #if: ${{ contains(github.event.head_commit.message, 'major')}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
+        name: 🐙 Setting up GitHub
+      - run: git config --global user.email "brunosilv_a@outlook.com"
+      - run: git config --global user.name "Bruno Silva"
         with:
           node-version: '14'
+        name: 📩 Update npm
+      - run: npm install -g npm  # Adding a cmd to update the npm version of the server
         name: 📦 Installing vsce package
       - run: npm install -g vsce@1.96.1 --save-dev
         name: ✅ Publishing on marketplace
-      - run: vsce publish minor -p ${{ secrets.AZURE_SECRET }}
+      - run: vsce publish major -p ${{ secrets.AZURE_SECRET }}
       
   build-minor:
-    # Run if there is any substring "minor" in the commit message
-    if: ${{ contains(github.event.head_commit.message, 'minor')}}
+    #if: ${{ contains(github.event.head_commit.message, 'minor')}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
+        name: 🐙 Setting up GitHub
+      - run: git config --global user.email "brunosilv_a@outlook.com"
+      - run: git config --global user.name "Bruno Silva"
         with:
           node-version: '14'
+        name: 📩 Update npm
+      - run: npm install -g npm  # Adding a cmd to update the npm version of the server
         name: 📦 Installing vsce package
       - run: npm install -g vsce@1.96.1 --save-dev
         name: ✅ Publishing on marketplace
       - run: vsce publish minor -p ${{ secrets.AZURE_SECRET }}
 
   build-patch:
-    # Run if there is any substring "path" in the commit message
-    if: ${{ contains(github.event.head_commit.message, 'patch')}}
+    #if: ${{ contains(github.event.head_commit.message, 'patch')}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
+        name: 🐙 Setting up GitHub
+      - run: git config --global user.email "brunosilv_a@outlook.com"
+      - run: git config --global user.name "Bruno Silva"
         with:
           node-version: '14'
+        name: 📩 Update npm
+      - run: npm install -g npm  # Adding a cmd to update the npm version of the server
         name: 📦 Installing vsce package
       - run: npm install -g vsce@1.96.1 --save-dev
         name: ✅ Publishing on marketplace
-      - run: vsce publish minor -p ${{ secrets.AZURE_SECRET }}
+      - run: vsce publish patch -p ${{ secrets.AZURE_SECRET }}
