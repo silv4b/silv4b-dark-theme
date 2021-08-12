@@ -1,4 +1,5 @@
-name: 📦 Deploy to VS Code Marketplace
+name: 📦 Deploy
+
 on:
   push:
     branches:
@@ -7,40 +8,27 @@ on:
 jobs:
   build-base:
     runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 3
+      matrix:
+        semantic: [major, minor, patch]
     steps:
-      - run: git config --global user.email "brunosilv_a@outlook.com"
-      - run: git config --global user.name "Bruno Silva"
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: '14'        
-
-  build-major:
-    if: ${{ contains(github.event.head_commit.message, 'major')}}
-    needs: build-base
-    runs-on: ubuntu-latest
-    steps:
+          node-version: '14'  
+      - uses: haya14busa/action-cond@v1
+        id: condval
+        with:
+          cond: ${{ startsWith(github.event.head_commit.message, matrix.semantic) }}
+          if_true: 'true'
+          if_false: 'false'
+      - name: 📦 Verify scope
+        run: echo "${{ github.event.head_commit.message }}"
       - name: 📦 Installing vsce package
         run: npm install -g vsce@1.96.1 --save-dev
       - name: ✅ Publishing on Marketplace
-        run: vsce publish major -p ${{ secrets.AZURE_SECRET }}
-
-  build-minor:
-    if: ${{ contains(github.event.head_commit.message, 'minor')}}
-    needs: build-base
-    runs-on: ubuntu-latest
-    steps:       
-      - name: 📦 Installing vsce package
-        run: npm install -g vsce@1.96.1 --save-dev
-      - name: ✅ Publishing on Marketplace
-        run: vsce publish minor -p ${{ secrets.AZURE_SECRET }}
-        
-  build-patch:
-    if: ${{ contains(github.event.head_commit.message, 'patch')}}
-    needs: build-base
-    runs-on: ubuntu-latest
-    steps:       
-      - name: 📦 Installing vsce package
-        run: npm install -g vsce@1.96.1 --save-dev
-      - name: ✅ Publishing on Marketplace
-        run: vsce publish patch -p ${{ secrets.AZURE_SECRET }}
+        if: | 
+          steps.condval.outputs.value == 'true'
+        run: |
+          vsce publish ${{ matrix.semantic }} -p ${{ secrets.AZURE_SECRET }}
