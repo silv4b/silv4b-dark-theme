@@ -1,7 +1,6 @@
 # Silv4b's Dark Theme 🌚
 
-![version number](https://vsmarketplacebadge.apphb.com/version/silv4b.silv4b-dark-theme.svg)
-![installs number](https://vsmarketplacebadge.apphb.com/installs/silv4b.silv4b-dark-theme.svg)
+[Install ✨](https://marketplace.visualstudio.com/items?itemName=silv4b.silv4b-dark-theme)
 
 ## About
 
