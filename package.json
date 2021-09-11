@@ -1,10 +1,10 @@
 {
     "name": "silv4b-dark-theme",
-    "displayName": "Silv4b Dark Theme",
-    "description": "Silv4b's Dark Theme!",
+    "displayName": "Silv4b Dark Theme 🌑",
+    "description": "A dark blue tone theme, different from the standard black/gray tones we're used to.",
     "version": "1.0.2",
     "publisher": "Silv4b",
-    "icon": "profile-square-150px.jpg",
+    "icon": "profile-photo.jpg",
     "repository": {
         "type": "git",
         "url": "https://github.com/silv4b/silv4b-dark-theme"
@@ -12,8 +12,8 @@
     "keywords": [
         "theme",
         "dark theme",
-        "Silv4b",
-        "Silv4b dark"
+        "silv4b",
+        "silv4b dark"
     ],
     "engines": {
         "vscode": "^1.59.0"
@@ -24,10 +24,34 @@
     "contributes": {
         "themes": [
             {
-                "label": "Silv4b Dark Theme",
+                "label": "Silv4b Dark Theme 🌑",
                 "uiTheme": "vs-dark",
                 "path": "./themes/Silv4b Dark Theme-color-theme.json"
             }
         ]
+    },
+    "scripts": {
+        "add": "git add .",
+        "commit": "git-cz",
+        "add-commit": "npm run add && git-cz"
+    },
+    "config": {
+        "commitizen": {
+            "path": "node_modules/cz-customizable"
+        }
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+            "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+        }
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^13.1.0",
+        "@commitlint/config-conventional": "^13.1.0",
+        "commitizen": "^4.2.4",
+        "cz-conventional-changelog": "3.3.0",
+        "cz-customizable": "^6.3.0",
+        "husky": "^7.0.2"
     }
 }
