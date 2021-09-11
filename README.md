@@ -1,6 +1,6 @@
 # Silv4b's Dark Theme 🌚
 
-[Install ✨](https://marketplace.visualstudio.com/items?itemName=silv4b.silv4b-dark-theme)
+[Install it ✨](https://marketplace.visualstudio.com/items?itemName=silv4b.silv4b-dark-theme)
 
 ## About
 
@@ -16,6 +16,6 @@ See [INSTALL.md](INSTALL.md).
 
 This is my baby 🎉  
   
-![Imgur Image](https://i.imgur.com/O8QguuG.png)  
+![Imgur Image](https://imgur.com/Vyg1IZS.png)  
 
-Made with ❤ (and hate 💥).
+Made with ❤.
